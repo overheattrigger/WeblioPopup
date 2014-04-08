@@ -28,7 +28,7 @@ namespace WeblioPopup
             //ctrl + F12 をホットキーに登録
             this.hotKeyA = new HotKey(this.Handle, MOD.MOD_CONTROL, Keys.F12);
             if (this.hotKeyA.Register() == 0) {
-                MessageBox.Show("このホットキーはすでに登録されています。\nWeblioPopupはすでに起動済みの可能性があります。");
+                MessageBox.Show("このホットキーはすでに登録されています。WeblioPopupはすでに起動済みの可能性があります。");
                 notifyIcon1.Visible = false;
                 System.Environment.Exit(0);
             }
@@ -77,7 +77,6 @@ namespace WeblioPopup
             webBrowser1.Document.Window.ScrollTo(0, 300);
         }
 
-        //
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
             if (!IsProgress)
@@ -96,14 +95,12 @@ namespace WeblioPopup
 
         }
 
-        //閉じるボタンが押されたとき
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             this.Hide();
         }
 
-        //最小化ボタンが押されたとき
         private void Form1_Resize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Minimized)
@@ -112,7 +109,6 @@ namespace WeblioPopup
             }
         }
 
-        //右クリックでできるメニュー
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
             notifyIcon1.Visible = false;
